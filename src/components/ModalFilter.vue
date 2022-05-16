@@ -18,41 +18,35 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue from "vue";
 
-@Component({
-  name: "MenuFilter",
-})
-export default class MenuFilter extends Vue {
-  @Prop({ default: false }) readonly value!: boolean;
-  @Prop({ default: "Filter" }) readonly title!: string;
-  @Prop({ default: false }) readonly allowActions!: boolean;
-
-  private filterMenuInternal = false;
-
-  get filterMenu(): boolean {
-    if (this.value) {
-      return this.value;
-    } else {
-      return this.filterMenuInternal;
-    }
-  }
-
-  set filterMenu(val: boolean) {
-    this.filterMenuInternal = val;
-    this.$emit("input", val);
-  }
-
-  public onClick(): void {
-    this.filterMenu = false;
-    this.$emit("click:accept");
-  }
-
-  public cancelClick(): void {
-    this.filterMenu = false;
-    this.$emit("click:cancel");
-  }
-}
+export default Vue.extend({
+  props: {
+    value: {
+      type: Boolean,
+      default: false,
+    },
+    title: {
+      type: String,
+      default: "Filter",
+    },
+  },
+  computed: {
+    filterMenu: {
+      get(): boolean {
+        return this.value;
+      },
+      set(val: boolean): void {
+        this.$emit("input", val);
+      },
+    },
+  },
+  methods: {
+    onClick(): void {
+      this.$emit("click:accept");
+    },
+  },
+});
 </script>
 
 <style lang="scss" scoped></style>
