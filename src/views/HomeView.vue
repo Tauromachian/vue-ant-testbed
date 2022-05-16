@@ -1,18 +1,15 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <menu-filter title="Filter"></menu-filter>
+    <mass-selection-filter></mass-selection-filter>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import MenuFilter from "@/components/ModalFilter.vue"; // @ is an alias to /src
+import Vue from "vue";
+import MassSelectionFilter from "@/components/MassSelectionFilter.vue";
 
-@Component({
-  components: {
-    MenuFilter,
-  },
-})
-export default class HomeView extends Vue {}
+export default Vue.extend({
+  components: { MassSelectionFilter },
+});
 </script>
