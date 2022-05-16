@@ -1,17 +1,17 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <menu-filter title="Filter"></menu-filter>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import MenuFilter from "@/components/ModalFilter.vue"; // @ is an alias to /src
 
 @Component({
   components: {
-    HelloWorld,
+    MenuFilter,
   },
 })
 export default class HomeView extends Vue {}
