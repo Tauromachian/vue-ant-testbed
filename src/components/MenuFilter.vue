@@ -20,12 +20,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-import FormActionButtons from "./FormActionButtons.vue";
-
 @Component({
-  components: {
-    FormActionButtons,
-  },
   name: "MenuFilter",
 })
 export default class MenuFilter extends Vue {
