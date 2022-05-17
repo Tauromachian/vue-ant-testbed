@@ -2,12 +2,16 @@
   <a-dropdown :trigger="['click']" v-model="internalFilterMenu">
     <a-button type="primary"> {{ title }} </a-button>
     <template #overlay>
-      <a-card class="content-wrapper" style="width: 300px">
-        <slot />
-        <action-buttons
-          @cancel-click="filterMenu = false"
-          @accept-click="onClick"
-        ></action-buttons>
+      <a-card>
+        <div class="content-wrapper">
+          <slot />
+        </div>
+        <div class="actions-wrapper">
+          <action-buttons
+            @cancel-click="filterMenu = false"
+            @accept-click="onClick"
+          ></action-buttons>
+        </div>
       </a-card>
     </template>
   </a-dropdown>
@@ -61,7 +65,14 @@ export default Vue.extend({
 <style scoped>
 .content-wrapper {
   height: 600px;
-  padding: 2em;
+  padding: 0 2em;
   overflow: scroll;
+}
+
+.actions-wrapper {
+  position: sticky;
+  bottom: 0;
+  padding: 1em 2em;
+  border-top: 1px solid #f0f0f0;
 }
 </style>
