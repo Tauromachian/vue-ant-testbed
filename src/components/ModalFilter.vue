@@ -4,6 +4,7 @@
     <template #overlay>
       <a-menu class="content-wrapper">
         <slot />
+        <action-buttons @accept-click="onClick"></action-buttons>
       </a-menu>
     </template>
   </a-dropdown>
@@ -12,7 +13,10 @@
 <script lang="ts">
 import Vue from "vue";
 
+import ActionButtons from "./ActionButtons.vue";
+
 export default Vue.extend({
+  components: { ActionButtons },
   props: {
     value: {
       type: Boolean,
@@ -43,6 +47,8 @@ export default Vue.extend({
 
 <style scoped>
 .content-wrapper {
+  height: 600px;
   padding: 2em;
+  overflow: scroll;
 }
 </style>
