@@ -2,13 +2,13 @@
   <a-dropdown :trigger="['click']" v-model="internalFilterMenu">
     <a-button type="primary"> {{ title }} </a-button>
     <template #overlay>
-      <a-menu class="content-wrapper">
+      <a-card class="content-wrapper" style="width: 300px">
         <slot />
         <action-buttons
           @cancel-click="filterMenu = false"
           @accept-click="onClick"
         ></action-buttons>
-      </a-menu>
+      </a-card>
     </template>
   </a-dropdown>
 </template>
