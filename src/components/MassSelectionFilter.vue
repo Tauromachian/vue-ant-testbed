@@ -3,48 +3,56 @@
     <a-form>
       <label for="">Nested Groups</label>
       <a-auto-complete
+        v-model="form.nestedGroup"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Device</label>
       <a-auto-complete
+        v-model="form.device"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Camera</label>
       <a-auto-complete
+        v-model="form.camera"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Project</label>
       <a-auto-complete
+        v-model="form.project"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Job</label>
       <a-auto-complete
+        v-model="form.job"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Use Case</label>
       <a-auto-complete
+        v-model="form.useCase"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Model</label>
       <a-auto-complete
+        v-model="form.model"
         :options="options"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Tags</label>
       <a-auto-complete
+        v-model="form.tags"
         :options="options"
         style="width: 200px"
         placeholder="input here"
