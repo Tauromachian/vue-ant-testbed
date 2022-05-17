@@ -1,5 +1,5 @@
 <template>
-  <modal-filter vertical>
+  <modal-filter vertical @click:accept="onClick">
     <a-form>
       <a-form-item label="Nested Groups" name="nested-groups">
         <a-auto-complete
@@ -110,6 +110,11 @@ export default Vue.extend({
       set(value: FormMassSelectionFilter) {
         this.$emit("input", value);
       },
+    },
+  },
+  methods: {
+    onClick(): void {
+      this.$emit("click:accept");
     },
   },
 });
