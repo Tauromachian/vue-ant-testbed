@@ -1,20 +1,12 @@
 <template>
-  <div>
-    <slot name="activator">
-      <a-button type="primary" @click="filterMenu = true">
-        Open Filter
-      </a-button>
-    </slot>
-
-    <a-modal
-      :title="title"
-      v-model="filterMenu"
-      :close-on-content-click="false"
-      @ok="onClick"
-    >
-      <slot />
-    </a-modal>
-  </div>
+  <a-dropdown :trigger="['click']">
+    <a-button type="primary"> {{ title }} </a-button>
+    <template #overlay>
+      <a-menu class="content-wrapper">
+        <slot />
+      </a-menu>
+    </template>
+  </a-dropdown>
 </template>
 
 <script lang="ts">
@@ -49,4 +41,8 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.content-wrapper {
+  padding: 2em;
+}
+</style>
