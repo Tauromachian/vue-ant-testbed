@@ -1,5 +1,5 @@
 <template>
-  <a-dropdown :trigger="['click']" v-model="filterMenu">
+  <a-dropdown :trigger="['click']" v-model="internalFilterMenu">
     <a-button type="primary"> {{ title }} </a-button>
     <template #overlay>
       <a-menu class="content-wrapper">
@@ -30,12 +30,22 @@ export default Vue.extend({
       default: "Filter",
     },
   },
+  data() {
+    return {
+      internalFilterMenu: false,
+    };
+  },
   computed: {
     filterMenu: {
       get(): boolean {
-        return this.value;
+        if (this.value) {
+          return this.value;
+        } else {
+          return this.internalFilterMenu;
+        }
       },
       set(val: boolean): void {
+        this.internalFilterMenu = val;
         this.$emit("input", val);
       },
     },
