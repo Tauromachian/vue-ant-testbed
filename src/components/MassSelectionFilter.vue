@@ -1,5 +1,5 @@
 <template>
-  <modal-filter v-model="opened" vertical>
+  <modal-filter vertical>
     <a-form>
       <a-form-item label="Nested Groups" name="nested-groups">
         <a-auto-complete
@@ -92,7 +92,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      opened: false,
       nestedGroups: [],
       devices: [],
       cameras: [],
