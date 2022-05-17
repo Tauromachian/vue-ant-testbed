@@ -4,56 +4,56 @@
       <label for="">Nested Groups</label>
       <a-auto-complete
         v-model="form.nestedGroup"
-        :options="options"
+        :options="nestedGroups"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Device</label>
       <a-auto-complete
         v-model="form.device"
-        :options="options"
+        :options="devices"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Camera</label>
       <a-auto-complete
         v-model="form.camera"
-        :options="options"
+        :options="cameras"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Project</label>
       <a-auto-complete
         v-model="form.project"
-        :options="options"
+        :options="projects"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Job</label>
       <a-auto-complete
         v-model="form.job"
-        :options="options"
+        :options="jobs"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Use Case</label>
       <a-auto-complete
         v-model="form.useCase"
-        :options="options"
+        :options="useCases"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Model</label>
       <a-auto-complete
         v-model="form.model"
-        :options="options"
+        :options="models"
         style="width: 200px"
         placeholder="input here"
       />
       <label for="">Tags</label>
       <a-auto-complete
         v-model="form.tags"
-        :options="options"
+        :options="tags"
         style="width: 200px"
         placeholder="input here"
       />
@@ -79,6 +79,18 @@ export default Vue.extend({
       type: Object as PropType<FormMassSelectionFilter>,
       required: true,
     },
+  },
+  data() {
+    return {
+      nestedGroups: [],
+      devices: [],
+      cameras: [],
+      projects: [],
+      jobs: [],
+      useCases: [],
+      models: [],
+      tags: [],
+    };
   },
   computed: {
     form: {
