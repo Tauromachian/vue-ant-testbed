@@ -8,6 +8,7 @@
         </div>
         <div class="actions-wrapper">
           <action-buttons
+            align-right
             @cancel-click="filterMenu = false"
             @accept-click="onClick"
           ></action-buttons>
