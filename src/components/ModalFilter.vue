@@ -1,10 +1,13 @@
 <template>
-  <a-dropdown :trigger="['click']">
+  <a-dropdown :trigger="['click']" v-model="filterMenu">
     <a-button type="primary"> {{ title }} </a-button>
     <template #overlay>
       <a-menu class="content-wrapper">
         <slot />
-        <action-buttons @accept-click="onClick"></action-buttons>
+        <action-buttons
+          @cancel-click="filterMenu = false"
+          @accept-click="onClick"
+        ></action-buttons>
       </a-menu>
     </template>
   </a-dropdown>
