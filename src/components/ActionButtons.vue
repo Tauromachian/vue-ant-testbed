@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <a-button :loading="disabled" text @click="cancelClick">
+  <div class="d-flex">
+    <a-button
+      :loading="disabled"
+      text
+      @click="cancelClick"
+      :class="{ 'ml-auto': alignRight }"
+    >
       <span class="btnfont">{{ cancelButtonText }}</span>
     </a-button>
     <a-button
@@ -30,6 +35,10 @@ export default {
       type: String,
       default: "Accept",
     },
+    alignRight: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     acceptClick() {
@@ -43,6 +52,14 @@ export default {
 </script>
 
 <style scoped>
+.d-flex {
+  display: flex;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
 .margin-left-8px {
   margin-left: 8px;
 }
