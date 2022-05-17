@@ -27,6 +27,16 @@ export default Vue.extend({
       required: true,
     },
   },
+  computed: {
+    form: {
+      get(): FormMassSelectionFilter {
+        return this.value;
+      },
+      set(value: FormMassSelectionFilter) {
+        this.$emit("input", value);
+      },
+    },
+  },
 });
 </script>
 
