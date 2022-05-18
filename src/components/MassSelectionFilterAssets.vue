@@ -1,40 +1,9 @@
 <template>
   <a-row>
-    <a-col :span="4">
-      <a-card hoverable style="width: 300px">
-        <template #cover>
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        </template>
-        <template #actions>
-          <a-button>Select this image</a-button>
-        </template>
-        <a-card-meta title="Card title" description="This is the description">
-          <template #avatar>
-            <a-avatar src="https://joeschmoe.io/api/v1/random" />
-          </template>
-        </a-card-meta>
-      </a-card>
-    </a-col>
-    <a-col :span="4">
-      <a-card hoverable style="width: 300px">
-        <template #cover>
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        </template>
-        <template #actions>
-          <a-button>Select this image</a-button>
-        </template>
-        <a-card-meta title="Card title" description="This is the description">
-          <template #avatar>
-            <a-avatar src="https://joeschmoe.io/api/v1/random" />
-          </template>
-        </a-card-meta>
-      </a-card>
+    <a-col :span="4" v-for="(asset, index) in assets" :key="index">
+      <mass-selection-filter-asset-card
+        :asset="asset"
+      ></mass-selection-filter-asset-card>
     </a-col>
   </a-row>
 </template>
@@ -44,8 +13,13 @@ import Vue, { PropType } from "vue";
 
 import { FormMassSelectionFilter } from "@/types/formMassSelectionFilter";
 
+import MassSelectionFilterAssetCard from "./MassSelectionFilterAssetCard.vue";
+
 export default Vue.extend({
   name: "MassSelectionFilterImages",
+  components: {
+    MassSelectionFilterAssetCard,
+  },
   props: {
     filter: {
       type: Object as PropType<FormMassSelectionFilter>,
@@ -54,14 +28,38 @@ export default Vue.extend({
   },
   data() {
     return {
-      nestedGroups: [],
-      devices: [],
-      cameras: [],
-      projects: [],
-      jobs: [],
-      useCases: [],
-      models: [],
-      tags: [],
+      assets: [
+        {
+          assetArchive:
+            "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+          organization: 0,
+          groups: 0,
+          job: 0,
+          camera: 0,
+          model: 0,
+          annotation: 0,
+          s3_path: 0,
+          asset_type: "",
+          create_date: "",
+          tags: "",
+          is_bad: "",
+        },
+        {
+          assetArchive:
+            "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+          organization: 0,
+          groups: 0,
+          job: 0,
+          camera: 0,
+          model: 0,
+          annotation: 0,
+          s3_path: 0,
+          asset_type: "",
+          create_date: "",
+          tags: "",
+          is_bad: "",
+        },
+      ],
     };
   },
 
