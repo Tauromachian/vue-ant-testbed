@@ -1,6 +1,9 @@
 <template>
   <div>
-    <mass-selection-filter-form v-model="form"></mass-selection-filter-form>
+    <mass-selection-filter-form
+      v-model="form"
+      class="mb-1"
+    ></mass-selection-filter-form>
     <mass-selection-filter-assets :filter="form"></mass-selection-filter-assets>
   </div>
 </template>
@@ -46,4 +49,8 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style scoped>
+.mb-1 {
+  margin-bottom: 1em;
+}
+</style>
