@@ -1,7 +1,7 @@
 <template>
   <div>
     <mass-selection-filter-form v-model="form"></mass-selection-filter-form>
-    <mass-selection-filter-images :filter="form"></mass-selection-filter-images>
+    <mass-selection-filter-assets :filter="form"></mass-selection-filter-assets>
   </div>
 </template>
 
@@ -9,12 +9,12 @@
 import Vue, { PropType } from "vue";
 
 import MassSelectionFilterForm from "./MassSelectionFilterForm.vue";
-import MassSelectionFilterImages from "./MassSelectionFilterImages.vue";
+import MassSelectionFilterAssets from "./MassSelectionFilterAssets.vue";
 
 import { FormMassSelectionFilter } from "@/types/formMassSelectionFilter";
 
 export default Vue.extend({
-  components: { MassSelectionFilterForm, MassSelectionFilterImages },
+  components: { MassSelectionFilterForm, MassSelectionFilterAssets },
   props: {
     value: {
       type: Object as PropType<FormMassSelectionFilter>,
