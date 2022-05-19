@@ -20,7 +20,6 @@
 import Vue, { PropType } from "vue";
 
 import { Asset } from "@/types/asset";
-import { Checkbox } from "ant-design-vue";
 
 export default Vue.extend({
   name: "MassSelectionFilterImagesCard",
