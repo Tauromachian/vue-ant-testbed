@@ -8,13 +8,16 @@
       :xl="6"
       v-for="(asset, index) in assets"
       :key="index"
+      class="mb-1"
     >
       <mass-selection-filter-asset-card
         :asset="asset"
         v-model="selectedAssets"
       ></mass-selection-filter-asset-card>
     </a-col>
-    <a-button type="primary" @click="submitClick">Submit</a-button>
+    <a-col :span="24" class="button-wrapper">
+      <a-button type="primary" @click="submitClick">Submit</a-button>
+    </a-col>
   </a-row>
 </template>
 
@@ -112,4 +115,13 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style scoped>
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: left;
+}
+</style>
