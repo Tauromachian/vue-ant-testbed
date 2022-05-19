@@ -49,7 +49,7 @@ export default Vue.extend({
           s3_path: 0,
           asset_type: "",
           create_date: "",
-          tags: "",
+          tags: ["tag1", "tag2"],
           is_bad: "",
         },
         {
@@ -64,7 +64,7 @@ export default Vue.extend({
           s3_path: 0,
           asset_type: "",
           create_date: "",
-          tags: "",
+          tags: ["tag3", "tag4"],
           is_bad: "",
         },
         {
@@ -79,7 +79,7 @@ export default Vue.extend({
           s3_path: 0,
           asset_type: "",
           create_date: "",
-          tags: "",
+          tags: ["tag3", "tag4"],
           is_bad: "",
         },
         {
@@ -94,7 +94,7 @@ export default Vue.extend({
           s3_path: 0,
           asset_type: "",
           create_date: "",
-          tags: "",
+          tags: ["tag3", "tag4"],
           is_bad: "",
         },
       ],
