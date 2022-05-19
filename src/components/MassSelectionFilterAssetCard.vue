@@ -4,7 +4,7 @@
       <img alt="example" :src="asset.assetArchive" />
     </template>
     <template #actions>
-      <a-button>Select this image</a-button>
+      <a-checkbox @change="checkCard(asset.assetArchive)"> Select </a-checkbox>
     </template>
     <a-card-meta title="Card title" description="This is the description">
       <template #avatar>
@@ -25,6 +25,20 @@ export default Vue.extend({
     asset: {
       type: Object as PropType<Asset>,
       required: true,
+    },
+    value: {
+      type: Array as PropType<Array<Asset>>,
+      default: () => [],
+    },
+  },
+  computed: {
+    selectedImages: {
+      get(): Asset[] {
+        return this.value;
+      },
+      set(val: Asset[]) {
+        this.$emit("input", val);
+      },
     },
   },
 
