@@ -4,7 +4,9 @@
       <img alt="example" :src="asset.assetArchive" />
     </template>
     <template #actions>
-      <a-checkbox @change="checkCard(asset.assetArchive)"> Select </a-checkbox>
+      <a-checkbox @change="(event) => checkCard(event, asset.assetArchive)">
+        Select
+      </a-checkbox>
     </template>
     <a-card-meta title="Card title" description="This is the description">
       <template #avatar>
@@ -18,6 +20,7 @@
 import Vue, { PropType } from "vue";
 
 import { Asset } from "@/types/asset";
+import { Checkbox } from "ant-design-vue";
 
 export default Vue.extend({
   name: "MassSelectionFilterImagesCard",
@@ -42,7 +45,21 @@ export default Vue.extend({
     },
   },
 
+  data() {
+    return {
+      assetFilesSet: new Set(),
+    };
+  },
+
   methods: {
+    checkCard(event: Event, assetFile: string): void {
+      if ((event?.target as HTMLInputElement)?.checked) {
+        this.assetFilesSet.add(assetFile);
+      } else {
+        this.assetFilesSet.delete(assetFile);
+      }
+      this.selectedImages = Array.from(this.assetFilesSet) as string[];
+    },
     onClick(): void {
       this.$emit("click:accept");
     },
