@@ -27,16 +27,16 @@ export default Vue.extend({
       required: true,
     },
     value: {
-      type: Array as PropType<Array<Asset>>,
+      type: Array as PropType<string[]>,
       default: () => [],
     },
   },
   computed: {
     selectedImages: {
-      get(): Asset[] {
+      get(): string[] {
         return this.value;
       },
-      set(val: Asset[]) {
+      set(val: string[]) {
         this.$emit("input", val);
       },
     },
