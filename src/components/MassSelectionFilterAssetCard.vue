@@ -10,8 +10,11 @@
     </template>
     <a-card-meta>
       <template #description>
-        <app-chip text="Tag1"></app-chip>
-        <app-chip text="Tag2"></app-chip>
+        <app-chip
+          v-for="(tag, index) in asset.tags"
+          :key="`chip-${tag}-${index}`"
+          :text="tag"
+        ></app-chip>
       </template>
     </a-card-meta>
   </a-card>
