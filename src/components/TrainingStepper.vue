@@ -55,10 +55,6 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.first-step {
-  text-align: left;
-}
-
 .steps-content {
   margin-top: 16px;
   border: 1px dashed #e9e9e9;
@@ -71,7 +67,5 @@ export default Vue.extend({
 
 .steps-action {
   margin-top: 24px;
-  display: flex;
-  justify-content: left;
 }
 </style>
