@@ -4,7 +4,7 @@
       <img alt="example" :src="asset.assetArchive" />
     </template>
     <template #actions>
-      <a-checkbox @change="(event) => checkCard(event, asset.assetArchive)">
+      <a-checkbox @change="(event) => checkCard(event, asset._id)">
         Select
       </a-checkbox>
     </template>
