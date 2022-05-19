@@ -5,7 +5,7 @@
       <a-step title="Second"></a-step>
     </a-steps>
     <div class="steps-content">
-      {{ steps[step].content }}
+      <mass-selection-filter v-if="step == 1"></mass-selection-filter>
     </div>
     <div class="steps-action">
       <stepper-action-buttons
@@ -22,11 +22,13 @@
 import Vue from "vue";
 
 import StepperActionButtons from "./StepperActionButtons.vue";
+import MassSelectionFilter from "./MassSelectionFilter.vue";
 
 export default Vue.extend({
   name: "TrainingStepper",
   components: {
     StepperActionButtons,
+    MassSelectionFilter,
   },
   data() {
     return {
