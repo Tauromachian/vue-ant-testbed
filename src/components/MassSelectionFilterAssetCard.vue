@@ -8,9 +8,10 @@
         Select
       </a-checkbox>
     </template>
-    <a-card-meta title="Card title" description="This is the description">
-      <template #avatar>
-        <a-avatar src="https://joeschmoe.io/api/v1/random" />
+    <a-card-meta>
+      <template #description>
+        <app-chip text="Tag1"></app-chip>
+        <app-chip text="Tag2"></app-chip>
       </template>
     </a-card-meta>
   </a-card>
@@ -21,8 +22,13 @@ import Vue, { PropType } from "vue";
 
 import { Asset } from "@/types/asset";
 
+import AppChip from "./AppChip.vue";
+
 export default Vue.extend({
   name: "MassSelectionFilterImagesCard",
+  components: {
+    AppChip,
+  },
   props: {
     asset: {
       type: Object as PropType<Asset>,
