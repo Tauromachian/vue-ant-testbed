@@ -11,6 +11,7 @@
     >
       <mass-selection-filter-asset-card
         :asset="asset"
+        v-model="selectedAssets"
       ></mass-selection-filter-asset-card>
     </a-col>
   </a-row>
@@ -36,6 +37,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      selectedAssets: [],
       assets: [
         {
           assetArchive:
