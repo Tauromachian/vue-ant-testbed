@@ -27,18 +27,6 @@ export default Vue.extend({
       required: true,
     },
   },
-  data() {
-    return {
-      nestedGroups: [],
-      devices: [],
-      cameras: [],
-      projects: [],
-      jobs: [],
-      useCases: [],
-      models: [],
-      tags: [],
-    };
-  },
 
   methods: {
     onClick(): void {
