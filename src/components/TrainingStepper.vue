@@ -42,7 +42,7 @@ export default Vue.extend({
     return {
       step: 0,
       form: {
-        epoch0: 10,
+        epochNumber: 10,
         batchSize: 0,
         testSize: 0,
         learningRate: 0.005,
