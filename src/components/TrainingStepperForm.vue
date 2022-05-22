@@ -1,41 +1,41 @@
 <template>
   <a-form vertical>
     <a-form-item label="Number of Epochs" name="nested-groups">
-      <a-input-number :min="10" :max="1000" />
+      <a-input-number :min="10" :max="1000" v-model="form.epochNumber" />
     </a-form-item>
     <a-form-item label="Batch Size" name="nested-groups">
-      <a-input-number :min="0" :max="50" />
+      <a-input-number :min="0" :max="50" v-model="form.batchSize" />
     </a-form-item>
     <a-form-item label="Test Size" name="nested-groups">
-      <a-input-number :min="0.0" :max="1.0" />
+      <a-input-number :min="0.0" :max="1.0" v-model="form.testSize" />
     </a-form-item>
     <a-form-item label="Learning rate" name="nested-groups">
-      <a-input-number :min="0.005" :max="1" />
+      <a-input-number :min="0.005" :max="1" v-model="form.learningRate" />
     </a-form-item>
     <a-form-item label="Max Depth" name="nested-groups">
-      <a-input-number :min="1" :max="10" />
+      <a-input-number :min="1" :max="10" v-model="form.maxDepth" />
     </a-form-item>
     <a-form-item label="Momentum" name="nested-groups">
-      <a-input-number :min="0" :max="1" />
+      <a-input-number :min="0" :max="1" v-model="form.momentum" />
     </a-form-item>
     <a-form-item label="Normalize image" name="nested-groups">
-      <a-switch />
+      <a-switch v-model="form.normalizeImage" />
     </a-form-item>
     <a-form-item label="Normalize Epoch End Shuffle" name="nested-groups">
-      <a-switch />
+      <a-switch v-model="form.epochEndShuffle" />
     </a-form-item>
     <a-form-item label="Stop training early" name="nested-groups">
-      <a-switch />
+      <a-switch v-model="form.earlyStop" />
     </a-form-item>
     <a-form-item label="RlR" name="nested-groups">
-      <a-switch />
+      <a-switch v-model="form.r1rFlag" />
     </a-form-item>
     <a-form-item label="Number of Offline augmentations" name="nested-groups">
-      <a-input-number :min="0" :max="10" />
+      <a-input-number :min="0" :max="10" v-model="form.noOfOffAug" />
     </a-form-item>
     <a-form-item label="Training Machine" name="device">
       <a-auto-complete
-        v-model="form.device"
+        v-model="form.targetMachine"
         :options="trainingMachines"
         style="width: 200px"
         placeholder="input here"
