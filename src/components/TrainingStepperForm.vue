@@ -60,12 +60,21 @@ export default Vue.extend({
   data() {
     return {
       trainingMachines: [
-        { value: "Sagemaker: Small - ml.c5.2xlarge" },
-        { value: "Sagemaker: Small (GPU) - ml.g4dn.xlarge" },
-        { value: "Sagemaker: Large - ml.c5.4xlarge" },
-        { value: "Sagemaker: Large (GPU) - ml.g4dn.4xlarge" },
-        { value: "Sagemaker: XLarge - ml.c5.9xlarge" },
-        { value: "Sagemaker: XLarge (GPU) - ml.g4dn.8xlarge" },
+        { value: "ml.c5.2xlarge", text: "Sagemaker: Small - ml.c5.2xlarge" },
+        {
+          value: "ml.g4dn.xlarge",
+          text: "Sagemaker: Small (GPU) - ml.g4dn.xlarge",
+        },
+        { value: "ml.c5.4xlarge", text: "Sagemaker: Large - ml.c5.4xlarge" },
+        {
+          value: "ml.g4dn.4xlarge",
+          text: "Sagemaker: Large (GPU) - ml.g4dn.4xlarge",
+        },
+        { value: "ml.c5.9xlarge", text: "Sagemaker: XLarge - ml.c5.9xlarge" },
+        {
+          value: "ml.g4dn.8xlarge",
+          text: "Sagemaker: XLarge (GPU) - ml.g4dn.8xlarge",
+        },
       ],
     };
   },
