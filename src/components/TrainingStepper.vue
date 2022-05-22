@@ -41,7 +41,20 @@ export default Vue.extend({
   data() {
     return {
       step: 0,
-      form: {},
+      form: {
+        epoch0: 10,
+        batchSize: 0,
+        testSize: 0,
+        learningRate: 0.005,
+        maxDepth: 1,
+        momentum: 0,
+        normalizeImage: true,
+        epochEndShuffle: true,
+        earlyStop: true,
+        r1rFlag: true,
+        noOfOffAug: 0,
+        targetMachine: "ml.c5.2xlarge",
+      },
       assetsForTraining: {},
       steps: [
         {
