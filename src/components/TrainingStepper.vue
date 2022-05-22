@@ -5,13 +5,19 @@
       <a-step title="Second"></a-step>
     </a-steps>
     <div class="steps-content">
-      <mass-selection-filter v-if="step == 1"></mass-selection-filter>
+      <training-stepper-form
+        v-if="step == 0"
+        v-model="form"
+      ></training-stepper-form>
+      <mass-selection-filter
+        v-model="assetsForTraining"
+        v-if="step == 1"
+      ></mass-selection-filter>
     </div>
     <div class="steps-action">
       <stepper-action-buttons
         @click:continue="next"
         @click:previous="prev"
-        @click:submit="submitTraining"
         :is-first-step="step < steps.length - 1"
         :is-last-step="step == steps.length - 1"
       ></stepper-action-buttons>
@@ -23,16 +29,20 @@ import Vue from "vue";
 
 import StepperActionButtons from "./StepperActionButtons.vue";
 import MassSelectionFilter from "./MassSelectionFilter.vue";
+import TrainingStepperForm from "./TrainingStepperForm.vue";
 
 export default Vue.extend({
   name: "TrainingStepper",
   components: {
     StepperActionButtons,
     MassSelectionFilter,
+    TrainingStepperForm,
   },
   data() {
     return {
       step: 0,
+      form: {},
+      assetsForTraining: {},
       steps: [
         {
           title: "First",
