@@ -36,10 +36,14 @@
     <a-form-item label="Training Machine" name="device">
       <a-auto-complete
         v-model="form.targetMachine"
-        :options="trainingMachines"
+        :data-source="trainingMachines"
         style="width: 200px"
         placeholder="input here"
-      />
+      >
+        <template #option="{ value: val }">
+          {{ val.get(value) }}
+        </template>
+      </a-auto-complete>
     </a-form-item>
   </a-form>
 </template>
