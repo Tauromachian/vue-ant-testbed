@@ -47,13 +47,13 @@
 <script lang="ts">
 import Vue, { PropType } from "vue";
 
-import { FormMassSelectionFilter } from "@/types/formMassSelectionFilter";
+import { TrainingForm } from "@/types/trainingForm";
 
 export default Vue.extend({
   name: "TrainingStepperForm",
   props: {
     value: {
-      type: Object as PropType<FormMassSelectionFilter>,
+      type: Object as PropType<TrainingForm>,
       required: true,
     },
   },
@@ -71,10 +71,10 @@ export default Vue.extend({
   },
   computed: {
     form: {
-      get(): FormMassSelectionFilter {
+      get(): TrainingForm {
         return this.value;
       },
-      set(value: FormMassSelectionFilter) {
+      set(value: TrainingForm) {
         this.$emit("input", value);
       },
     },
