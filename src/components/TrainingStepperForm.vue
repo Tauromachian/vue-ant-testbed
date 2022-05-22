@@ -79,6 +79,13 @@ export default Vue.extend({
     };
   },
   computed: {
+    trainingMachinesMap() {
+      const trainingMachinesMap = new Map();
+      this.trainingMachines.forEach((machine) => {
+        trainingMachinesMap.set(machine.value, machine.text);
+      });
+      return trainingMachinesMap;
+    },
     form: {
       get(): TrainingForm {
         return this.value;
