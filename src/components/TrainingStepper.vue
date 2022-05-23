@@ -87,7 +87,6 @@ export default Vue.extend({
   background-color: #fafafa;
   min-height: 200px;
   text-align: center;
-  padding-top: 80px;
 }
 
 .steps-action {
