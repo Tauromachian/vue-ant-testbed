@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <div class="logo-wrapper">
+      <img alt="Vue logo" src="../assets/logo.png" />
+    </div>
+
     <div class="container">
       <training-stepper></training-stepper>
     </div>
@@ -51,5 +54,10 @@ export default Vue.extend({
   .container {
     max-width: 1456px;
   }
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
 }
 </style>
