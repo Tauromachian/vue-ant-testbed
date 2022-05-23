@@ -82,7 +82,6 @@ export default Vue.extend({
 <style scoped>
 .steps-content {
   margin-top: 16px;
-  border: 1px dashed #e9e9e9;
   border-radius: 6px;
   background-color: #fafafa;
   min-height: 200px;
