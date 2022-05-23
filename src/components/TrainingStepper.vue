@@ -86,7 +86,6 @@ export default Vue.extend({
   border-radius: 6px;
   background-color: #fafafa;
   min-height: 200px;
-  text-align: center;
 }
 
 .steps-action {
