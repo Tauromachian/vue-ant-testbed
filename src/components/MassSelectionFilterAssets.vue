@@ -15,9 +15,6 @@
         v-model="selectedAssets"
       ></mass-selection-filter-asset-card>
     </a-col>
-    <a-col :span="24" class="button-wrapper">
-      <a-button type="primary" @click="submitClick">Submit</a-button>
-    </a-col>
   </a-row>
 </template>
 
@@ -105,12 +102,6 @@ export default Vue.extend({
         },
       ],
     };
-  },
-
-  methods: {
-    submitClick(): void {
-      this.$emit("click:submit", this.selectedAssets);
-    },
   },
 });
 </script>
