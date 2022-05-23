@@ -13,14 +13,14 @@
         v-model="assetsForTraining"
         v-if="step == 1"
       ></mass-selection-filter>
-    </div>
-    <div class="steps-action">
-      <stepper-action-buttons
-        @click:continue="next"
-        @click:previous="prev"
-        :is-first-step="step < steps.length - 1"
-        :is-last-step="step == steps.length - 1"
-      ></stepper-action-buttons>
+      <div class="steps-action">
+        <stepper-action-buttons
+          @click:continue="next"
+          @click:previous="prev"
+          :is-first-step="step < steps.length - 1"
+          :is-last-step="step == steps.length - 1"
+        ></stepper-action-buttons>
+      </div>
     </div>
   </div>
 </template>
@@ -88,6 +88,6 @@ export default Vue.extend({
 }
 
 .steps-action {
-  margin-top: 24px;
+  margin-top: 14px;
 }
 </style>
