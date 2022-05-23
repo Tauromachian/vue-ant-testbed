@@ -6,6 +6,7 @@
       @click="clickCancel"
       :disabled="loading"
       :loading="loading"
+      class="mr-1"
     >
       Previous
     </a-button>
@@ -54,4 +55,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.mr-1 {
+  margin-right: 1em;
+}
+</style>
